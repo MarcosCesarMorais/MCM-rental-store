@@ -1,44 +1,73 @@
-# Projeto de Desenvolvimento de Sistemas em Micro-Services 🎓
+# Sistema de Locação de Filmes e Games 🎬🎮
 
-Este projeto será criado para praticar o desenvolvimento de sistemas em Micro-Services no contexto de [Desenvolvimento de Software Fullstack].
-
-## Tecnologias Utilizadas
-
-![VS Code Badge](https://img.shields.io/badge/VS%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Java Badge](https://img.shields.io/badge/Java-007396.svg?style=for-the-badge&logo=java&logoColor=white)
-![Spring Badge](https://img.shields.io/badge/Spring-6DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
-![Docker Badge](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Angular Badge](https://img.shields.io/badge/Angular-DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
-
-## Descrição
-
-Este projeto visa a criação de um sistema utilizando a arquitetura de micro-serviços, com foco no desenvolvimento Fullstack. Será utilizado Java e Spring Boot no backend, Angular no frontend, e Docker para containerização dos serviços. O desenvolvimento será feito no Visual Studio Code.
-
-## Objetivos
-
-- Praticar a arquitetura de micro-serviços
-- Desenvolver habilidades Fullstack
-- Utilizar tecnologias modernas e amplamente usadas no mercado
-- Criar um sistema escalável e modular
+Este projeto foi criado para praticar o desenvolvimento de sistemas utilizando a arquitetura de micro-serviços. O sistema permite gerenciar produtos (filmes e games), clientes e locações.
 
 ## Estrutura do Projeto
 
-1. **Backend**: Desenvolvido em Java com Spring Boot
-2. **Frontend**: Desenvolvido em Angular
-3. **Containerização**: Utilização de Docker para gerenciar os containers dos serviços
-4. **IDE**: Visual Studio Code como ambiente de desenvolvimento
+O projeto é composto por três micro-serviços principais e dois serviços adicionais para descoberta e roteamento de serviços:
 
-## Instruções para Execução
+- **Product Service**: Gerencia filmes e games.
+- **Customer Service**: Gerencia informações de clientes.
+- **Rental Service**: Gerencia locações de filmes e games.
+- **Discovery Server (Eureka Server)**: Serviço de descoberta de micro-serviços.
+- **API Gateway (Spring Cloud Gateway)**: Gateway para roteamento de solicitações entre micro-serviços.
 
-1. Clone o repositório
-2. Siga as instruções de configuração para cada serviço
-3. Execute os containers Docker para iniciar os serviços
-4. Acesse o frontend para interagir com o sistema
+## Tecnologias Utilizadas
 
-## Contribuição
+![Java Badge](https://img.shields.io/badge/Java-007396.svg?style=for-the-badge&logo=java&logoColor=white)
+![Spring Boot Badge](https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=spring-boot&logoColor=white)
+![Docker Badge](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
+![MySQL Badge](https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 
-Sinta-se à vontade para contribuir com o projeto. Faça um fork do repositório, crie uma branch com suas alterações e envie um pull request.
+## Estrutura dos Diretórios
 
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+```plaintext
+film-rental-system/
+├── product-service/
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml
+├── customer-service/
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml
+├── rental-service/
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml
+├── discovery-server/
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml
+├── api-gateway/
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml
+└── docker-compose.yml
+```
+## Como Executar
+  Pré-requisitos
+  Docker
+  Docker Compose
+## Passos para Executar
+  1 - Clone o repositório:
+  ```plaintext
+    git clone https://github.com/seu-usuario/film-rental-system.git
+    cd film-rental-system
+```
+  2 - Construa e inicie os serviços:
+```plaintext
+docker-compose up --build
+```
+  3 - Acesse o Eureka Server para ver os micro-serviços registrados: http://localhost:8761
+  Endpoints Principais
+    ## Product Service
+      GET /api/v1/products/{id} - Obtém um produto por ID
+      POST /api/v1/products - Cria um novo produto
+      PUT /api/v1/products/{id}/stock - Atualiza o estoque de um produto
+    ##Customer Service
+      GET /api/v1/customers/{id} - Obtém um cliente por ID
+      POST /api/v1/customers - Cria um novo cliente
+    ##Rental Service
+      GET /api/v1/rentals/{id} - Obtém uma locação por ID
+      POST /api/v1/rentals - Cria uma nova locação
