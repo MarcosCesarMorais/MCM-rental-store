@@ -61,13 +61,13 @@ docker-compose up --build
 ```
   3 - Acesse o Eureka Server para ver os micro-serviços registrados: http://localhost:8761
   Endpoints Principais
-    ## Product Service
+## Product Service
       GET /api/v1/products/{id} - Obtém um produto por ID
       POST /api/v1/products - Cria um novo produto
       PUT /api/v1/products/{id}/stock - Atualiza o estoque de um produto
-    ##Customer Service
+## Customer Service
       GET /api/v1/customers/{id} - Obtém um cliente por ID
       POST /api/v1/customers - Cria um novo cliente
-    ##Rental Service
+## Rental Service
       GET /api/v1/rentals/{id} - Obtém uma locação por ID
       POST /api/v1/rentals - Cria uma nova locação
