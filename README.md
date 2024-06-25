@@ -18,6 +18,7 @@ O projeto é composto por três micro-serviços principais e dois serviços adic
 ![Spring Boot Badge](https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![Docker Badge](https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![MySQL Badge](https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![RabbitMQ Badge](https://img.shields.io/badge/RabbitMQ-FF6600.svg?style=for-the-badge&logo=rabbitmq&logoColor=white)
 
 ## Estrutura dos Diretórios
 
